@@ -23,7 +23,7 @@ const asking = function () {
     // screenPrice = prompt("Сколько будет стоить данная работа?");
 
     do {
-        screenPrice = +prompt("Сколько будет стоить данная работа?");
+        screenPrice = +prompt("Сколько будет стоить данная работа?", 12345);
     } while (!isNumber(screenPrice));
 
     adaptive = confirm("Нужен ли адаптив на сайте?");
@@ -41,13 +41,12 @@ const getAllServicePrices = function () {
         } else if (i === 1) {
             service2 = prompt("Какой дополнительный тип услуги нужен?", "Отправка формы");
         }
-        sum = +prompt("Сколько это будет стоить?");
+        total = +prompt("Сколько это будет стоить?", 1234);
 
-        while (!isNumber(sum)) {
-            total = +prompt("Сколько это будет стоить?");
-            sum += total;
+        while (!isNumber(total)) {
+            total = +prompt("Сколько это будет стоить?", 2345);
         }
-
+        sum += total;
     }
     return sum;
 
